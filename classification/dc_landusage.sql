@@ -8,7 +8,7 @@ is 'extract data from osm_landusages for visual level from lv7 to lv11';
 
 insert into landusages_lv0 
 select * from osm_landusages
-where type in { 'recreation_ground', 
+where type in ( 'recreation_ground', 
                 'cemetery', 
                 'common', 
                 'park', 
@@ -16,7 +16,7 @@ where type in { 'recreation_ground',
                 'pitch', 
                 'golf_course', 
                 'wood', 
-                'forest'};
+                'forest');
 
 create index "landusages_lv0_geom_gist"
 on landusages_lv0
